@@ -5,12 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TradingTool</title>
     <style>
-	*{box-sizing: border-box;}
-        body {
-            font-family: sans-serif;
+        /* Reset CSS agar konsisten di semua browser */
+        * {
+            box-sizing: border-box;
             margin: 0;
-            background-color: #000F08; /* Warna Dasar */
-            color: white; /* Atur warna teks agar terlihat di latar belakang gelap */
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212; /* Latar belakang dark */
+            color: #f0f0f0; /* Warna teks terang */
+            line-height: 1.6; /* Keterbacaan teks */
+        }
+
+        /* Penataan Container Utama */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto; /* Tengah secara horizontal */
+//            padding: 20px;
         }
 
         header, main, footer {
@@ -18,38 +31,53 @@
         }
 
         header {
-            background-color: #3E2F5B; /* Warna Sekunder */
-            text-align: center;
+            background-color: #212121; /* Warna latar belakang header */
+            border-bottom: 1px solid #333; /* Garis pemisah */
+        }
+
+        header h1 {
+            text-align: left; /* Judul rata kiri */
+            font-size: 2em;
+            margin-bottom: 0.5em;
+            color: #eee; /* Warna judul yang lebih terang */
         }
 
         main {
-            min-height: 80vh; /* Pastikan main memiliki tinggi minimal */
+            min-height: 70vh; /* Tinggi minimal main */
+            padding: 30px;
         }
 
         footer {
-            background-color: #3E2F5B; /* Warna Sekunder */
+            background-color: #212121; /* Warna latar belakang footer */
+            border-top: 1px solid #333; /* Garis pemisah */
             text-align: center;
-            position:relative;
-            bottom:0;
+            padding: 20px;
+            position: relative; /* Penting untuk positioning */
+            bottom: 0;         /* Melekat di bagian bawah */
             width: 100%;
+        }
+
+        footer p {
+            font-size: 0.9em;
+            color: #ccc; /* Warna teks footer */
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <!-- Isi Header Disini -->
-        <h1>TradingTool</h1>
-    </header>
+    <div class="container">
+        <header>
+            <h1>TradingTool</h1>
+        </header>
 
-    <main>
-        <!-- Isi Konten Utama Disini -->
-    </main>
+        <main>
+            <!-- Isi Konten Utama Disini -->
+        </main>
 
-    <footer>
-        <!-- Isi Footer Disini -->
-        <p>Made with love by FAY</p>
-    </footer>
+        <footer>
+            <p>Made with love by FAY</p>
+        </footer>
+    </div>
 
 </body>
 </html>
