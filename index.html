@@ -20,13 +20,12 @@
 
         .container {
             max-width: 1200px;
-            margin: 0 auto;
         }
 
         header {
             text-align: left;
             padding: 20px;
-		background-color: #212121;
+            background-color: #212121;
         }
 
         header h1 {
@@ -57,16 +56,31 @@
         .data-container {
             display: flex;
             justify-content: space-around;
-            width: 80%;
+            width: 100%;
             margin-bottom: 20px;
         }
 
-        .data-box {
+        .data-item {
             border: 2px solid #f0f0f0;
-            padding: 10px 20px;
-            border-radius: 25px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .data-box {
             text-align: center;
             min-width: 80px;
+        }
+
+        .data-input {
+            background-color: #333;
+            color: #f0f0f0;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 15px;
+            text-align: center;
+            width: 80px;
         }
 
         footer {
@@ -96,9 +110,18 @@
             <button class="button">Refresh</button>
 
             <div class="data-container">
-                <div class="data-box">H24</div>
-                <div class="data-box">CP</div>
-                <div class="data-box">L24</div>
+                <div class="data-item">
+                    <div class="data-box">H24</div>
+                    <input type="text" class="data-input" id="h24" placeholder="Value">
+                </div>
+                <div class="data-item">
+                    <div class="data-box">CP</div>
+                    <input type="text" class="data-input" id="cp" placeholder="Value">
+                </div>
+                <div class="data-item">
+                    <div class="data-box">L24</div>
+                    <input type="text" class="data-input" id="l24" placeholder="Value">
+                </div>
             </div>
         </main>
 
