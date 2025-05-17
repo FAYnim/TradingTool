@@ -18,7 +18,8 @@ $last = $data["ticker"]["last"];
 $r = array(
 	"high" => $high,
 	"low" => $low,
-	"last" => $last
+	"last" => $last,
+	"data" => $data
 );
 
 header('Content-Type: application/json');
