@@ -1,14 +1,27 @@
 <?php
-// Contoh data (ganti dengan data dari sumber yang sebenarnya)
-$data = array(
-  "h24" => rand(100, 200) / 100.0,
-  "cp" => rand(90, 210) / 100.0,
-  "l24" => rand(80, 220) / 100.0
+function get_market_data($market){
+	$url = "https://indodax.com/api/ticker/dogeidr";
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+	$response = curl_exec($ch);
+	$decode = json_decode($response, 1);
+	curl_close($ch);
+	return $decode;
+}
+
+$data = get_market_data("dogeidr");
+$high = $data["ticker"]["high"];
+$low = $data["ticker"]["low"];
+$last = $data["ticker"]["last"];
+$r = array(
+	"high" => $high,
+	"low" => $low,
+	"last" => $last
 );
 
-// Set header untuk mengindikasikan bahwa kita mengirimkan JSON
 header('Content-Type: application/json');
 
-// Encode array PHP ke JSON
-echo json_encode($data);
+echo json_encode($r);
 ?>

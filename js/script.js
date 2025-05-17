@@ -4,12 +4,13 @@ $(document).ready(function() {
 
     $.ajax({
       url: "get-data.php",
-      type: "GET",
-      dataType: "json",
+      type: "POST",
+      datatype: "html",
       success: function(data) {
-        $("#h24").val(data.h24);
-        $("#cp").val(data.cp);
-        $("#l24").val(data.l24);
+	var cell = JSON.parse(JSON.stringify(data));
+        $("#h24").val(cell.high);
+        $("#cp").val(cell.last);
+        $("#l24").val(cell.low);
 
         $(".button").removeClass("button-loading");
       },
