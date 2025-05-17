@@ -11,6 +11,7 @@ $(document).ready(function() {
         $("#h24").val(cell.high);
         $("#cp").val(cell.last);
         $("#l24").val(cell.low);
+        alert(cell.data);
 
         $(".button").removeClass("button-loading");
       },
