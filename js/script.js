@@ -17,7 +17,7 @@ $(document).ready(function() {
       },
       error: function(xhr, status, error) {
         console.error("Terjadi kesalahan saat memuat data: " + error);
-
+	alert(error);
         $(".button").removeClass("button-loading");
 
         alert("Gagal memuat data.  Silakan coba lagi.");
