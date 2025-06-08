@@ -1,0 +1,32 @@
+*{box-sizing: border-box;}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    z-index: 100;
+}
+
+main {
+    position: fixed;
+    top: 60px; /* Sesuaikan dengan tinggi header */
+    bottom: 60px; /* Sesuaikan dengan tinggi footer */
+    width: 100%;
+    overflow-y: auto;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: white;
+    z-index: 100;
+}
