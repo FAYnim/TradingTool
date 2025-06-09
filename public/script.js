@@ -1,4 +1,18 @@
+class IndodaxAPI {
+	static getTicker(ticker = 'btc_idr'){
+		return $.get(`https://indodax.com/api/${ticker}/ticker`);
+	}
+}
+
 $(document).ready(function(){
+	IndodaxAPI.getTicker()
+	.then(response => {
+		console.log(response.ticker.last);
+	})
+	.catch(error => {
+		console.error('Error', error);
+	});
+
 	$.get('api/orders').done(function(orders){
 		renderOrders(orders);
 	}).fail(function(){
@@ -57,3 +71,4 @@ $(document).ready(function() {
     $('.floating-order-controls').removeClass('active');
   });
 });
+
