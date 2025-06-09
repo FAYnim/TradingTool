@@ -54,14 +54,38 @@ header .logo {
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
+/* === Main ===*/
+
 main {
 	background: var(--rich-black);
     position: fixed;
-    top: 60px; /* Sesuaikan dengan tinggi header */
-    bottom: 60px; /* Sesuaikan dengan tinggi footer */
+    top: 50px; /* Sesuaikan dengan tinggi header */
+    bottom: 50px; /* Sesuaikan dengan tinggi footer */
     width: 100%;
     overflow-y: auto;
 }
+/* Orders Table Styles */
+.orders-container { /*padding: 20px;*/ color: var(--light-gray); }
+.orders-container h2 {padding-left: 20px;}
+.orders-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+.orders-table th, .orders-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--medium-gray); }
+.orders-table th { background-color: var(--dark-charcoal); font-weight: 600; }
+
+/* Status badges */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+.status-badge.filled { background-color: var(--mint-green); color: var(--rich-black); }
+.status-badge.active { background-color: var(--electric-blue); color: white; }
+.status-badge.partially_filled { background-color: var(--neon-purple); color: white; }
+
+/* Color coding */
+.buy { color: var(--mint-green); }
+.sell { color: var(--muted-red); }
+.error { color: var(--muted-red); padding: 20px; text-align: center; }
 
 /* === Footer ===*/
 footer {
@@ -71,6 +95,144 @@ footer {
     background: var(--gradient-blue-purple);
     z-index: 100;
     height: 50px;
+}
+
+/* Floating Order Controls */
+.floating-order-controls {
+  position: fixed;
+  bottom: 60px; /* 10px above footer (footer height is 50px) */
+  right: 20px;
+  z-index: 90;
+}
+
+.new-order-trigger {
+  background: var(--electric-blue);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.new-order-trigger:hover {
+  background: var(--neon-purple);
+  transform: translateY(-2px);
+}
+
+.new-order-trigger span::before {
+  content: "+";
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Order Form */
+.order-form-container {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  width: 300px;
+  background: var(--dark-charcoal);
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  margin-bottom: 10px;
+  display: none;
+}
+
+/* Keep previous form styles but add: */
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Show form when active */
+.floating-order-controls.active .order-form-container {
+  display: block;
+}
+
+.order-form-container {
+  /*position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;*/
+  background: var(--dark-charcoal);
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid var(--medium-gray);
+}
+.order-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form-row label {
+  font-size: 0.85rem;
+  color: var(--light-gray);
+}
+.form-row input,
+.form-row select {
+  background: var(--rich-black);
+  border: 1px solid var(--medium-gray);
+  border-radius: 4px;
+  padding: 8px 12px;
+  color: white;
+  font-size: 0.9rem;
+}
+.form-row input:focus,
+.form-row select:focus {
+  outline: none;
+  border-color: var(--electric-blue);
+  box-shadow: 0 0 0 2px rgba(58, 134, 255, 0.2);
+}
+
+/* Form Actions */
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.submit-btn,
+.cancel-btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.submit-btn {
+  background: var(--electric-blue);
+  color: white;
+  border: none;
+}
+
+.submit-btn:hover {
+  background: #2a75e6;
+}
+
+.cancel-btn {
+  background: transparent;
+  color: var(--light-gray);
+  border: 1px solid var(--medium-gray);
+}
+
+.cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
 }
 
 .footer-nav ul {

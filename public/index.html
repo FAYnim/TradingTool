@@ -17,6 +17,55 @@
     </main>
 
 	<footer>
+
+<div class="floating-order-controls">
+  <div class="new-order-trigger">
+    <span>+ New Order</span>
+  </div>
+  
+  <div class="order-form-container">
+    <form id="new-order-form" class="order-form">
+      <!-- Form content same as before -->
+      <div class="form-row">
+        <label for="order-type">Type:</label>
+        <select id="order-type" name="type" required>
+          <option value="limit">Limit</option>
+          <option value="market">Market</option>
+          <option value="stop_limit">Stop Limit</option>
+        </select>
+      </div>
+      
+      <div class="form-row">
+        <label for="order-side">Side:</label>
+        <select id="order-side" name="side" required>
+          <option value="buy">Buy</option>
+          <option value="sell">Sell</option>
+        </select>
+      </div>
+      
+      <div class="form-row">
+        <label for="order-symbol">Symbol:</label>
+        <input type="text" id="order-symbol" name="symbol" placeholder="BTCUSDT" required>
+      </div>
+      
+      <div class="form-row">
+        <label for="order-price">Price:</label>
+        <input type="number" id="order-price" name="price" step="0.0001" required>
+      </div>
+      
+      <div class="form-row">
+        <label for="order-amount">Amount:</label>
+        <input type="number" id="order-amount" name="amount" step="0.0001" required>
+      </div>
+      
+      <div class="form-actions">
+        <button type="submit" class="submit-btn">Place Order</button>
+        <button type="button" class="cancel-btn">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 	    <nav class="footer-nav">
 	        <ul>
 	            <li class="active"><a href="#"><i class="icon-order"></i>Order</a></li>
