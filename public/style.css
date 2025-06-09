@@ -68,7 +68,7 @@ header .logo {
     align-items: center;
     gap: 8px;
     font-family: var(--font-data);
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     background: var(--medium-gray);
     padding: 10px;
     border-radius: 15px;
