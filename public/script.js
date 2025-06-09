@@ -5,13 +5,13 @@ class IndodaxAPI {
 }
 
 $(document).ready(function(){
-	IndodaxAPI.getTicker()
+/*	IndodaxAPI.getTicker()
 	.then(response => {
 		console.log(response.ticker.last);
 	})
 	.catch(error => {
 		console.error('Error', error);
-	});
+	});*/
 
 	$.get('api/orders').done(function(orders){
 		renderOrders(orders);

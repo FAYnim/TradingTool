@@ -2,8 +2,6 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 
-const indodaxService = require('./services/indodax');
-
 const app = express();
 const PORT = 3000;
 
@@ -22,15 +20,6 @@ app.get('/api/orders', (req, res) => {
 	} catch {
 		res.status(500).json({ error: 'Failed to load order' });
 	}
-});
-
-app.get('/api/ticker/:pair', async (req, res) => {
-  try {
-    const ticker = await indodaxService.getTicker(req.params.pair);
-    res.json(ticker);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
 });
 
 // Jalankan server
