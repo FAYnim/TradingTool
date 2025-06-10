@@ -29,7 +29,9 @@ $(document).ready(function(){
 
 var load_modul = function(userpos){
 	$('main').html("<div class='error'>Loading...</div>");
+	$('.new-order-trigger').hide();
 	if(userpos === 'order'){
+		$('.new-order-trigger').show();
 		$.get('api/orders').done(function(orders){
 			renderOrders(orders);
 		}).fail(function(){
@@ -73,6 +75,42 @@ var load_modul = function(userpos){
 
 			$('main').html(tableHtml);
 		}
+	} else if(userpos === 'calc') {
+		const renderCalc = `
+			<div id="calculator-container">
+			    <h2 class="calculator-title">Trading Calculators</h2>
+			    <div class="calculator-grid">
+			        <!-- Kolom 1 -->
+			        <div class="calculator-column">
+			            <div class="calculator-box" data-calc="profit">
+			                <div class="calculator-icon">💰</div>
+			                <h3>Profit Calculator</h3>
+			                <p>Hitung profit/loss trading</p>
+			            </div>
+			            <div class="calculator-box" data-calc="position-size">
+			                <div class="calculator-icon">📊</div>
+			                <h3>Position Size</h3>
+			                <p>Ukuran posisi berdasarkan risiko</p>
+			            </div>
+			        </div>
+			        <!-- Kolom 2 -->
+			        <div class="calculator-column">
+			            <div class="calculator-box" data-calc="moving-average">
+			                <div class="calculator-icon">📈</div>
+			                <h3>Moving Average</h3>
+			                <p>Analisis crossover MA</p>
+			            </div>
+			            <div class="calculator-box" data-calc="risk-reward">
+			                <div class="calculator-icon">⚖️</div>
+			                <h3>Risk/Reward</h3>
+			                <p>Rasio risiko vs reward</p>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+		`;
+
+		$('main').html(renderCalc);
 	}
 }
 
