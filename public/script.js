@@ -6,6 +6,7 @@ class IndodaxAPI {
 
 $(document).ready(function(){
 	let userpos = 'order';
+	let calcpos = "";
 
 	load_modul(userpos);
 
@@ -20,6 +21,7 @@ $(document).ready(function(){
 
 	$(".calculator-box").on("click", function() {
 		let calcData = $(this).data("calc");
+		calcpos = calcData;
 		load_calc(calcData);
 	});
 
@@ -86,4 +88,12 @@ var renderOrders = function(orders){
 			`).join('')}
 	`;
 	$("#orders-data").html(tableHtml);
+}
+
+var calc_count = function(calcpos){
+	let result;
+	if(calcpos === "profit") {
+		result = ($("#sell-price").val() - $("#buy-price").val()) / $("#buy-price").val() * 100;
+		$("#calc-result").val(result);
+	}
 }
