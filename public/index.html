@@ -19,6 +19,60 @@
 	</header>
 
     <main>
+    	<div class="error" id="loading-section">Loading...</div>
+    	<div class="error" id="error-section">Something Error!</div>
+
+		<div id="order-section">
+			<div class="orders-container">
+				<h2>Orders</h2>
+				<table class="orders-table">
+					<thead>
+						<th>ID</th>
+						<th>Symbol</th>
+						<th>Type</th>
+						<th>Side</th>
+						<th>Price</th>
+						<th>Amount</th>
+						<th>Filled</th>
+						<th>Status</th>
+						<th>Time</th>
+					</thead>
+					<tbody id="orders-data">
+					</tbody>
+				</table>
+			</div>
+		</div>
+   
+    	<div id="calc-section">
+		    <h2 class="calculator-title">Trading Calculators</h2>
+		    <div class="calculator-grid">
+		        <div class="calculator-column">
+		            <div class="calculator-box" data-calc="profit">
+		                <div class="calculator-icon">💰</div>
+		                <h3>Profit Calculator</h3>
+		                <p>Hitung profit/loss trading</p>
+		            </div>
+		            <div class="calculator-box" data-calc="position-size">
+		                <div class="calculator-icon">📊</div>
+		                <h3>Position Size</h3>
+		                <p>Ukuran posisi berdasarkan risiko</p>
+		            </div>
+		        </div>
+		        <div class="calculator-column">
+		            <div class="calculator-box" data-calc="moving-average">
+		                <div class="calculator-icon">📈</div>
+		                <h3>Moving Average</h3>
+		                <p>Analisis crossover MA</p>
+		            </div>
+		            <div class="calculator-box" data-calc="risk-reward">
+		                <div class="calculator-icon">⚖️</div>
+		                <h3>Risk/Reward</h3>
+		                <p>Rasio risiko vs reward</p>
+		            </div>
+		        </div>
+		    </div>
+	    </div>
+	</div>
 
     </main>
 
