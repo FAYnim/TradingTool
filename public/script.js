@@ -18,6 +18,11 @@ $(document).ready(function(){
 		load_modul(userpos);
 	});
 
+	$(".calculator-box").on("click", function() {
+		let calcData = $(this).data("calc");
+		load_calc(calcData);
+	});
+
 	$('.new-order-trigger').click(function() {
 		$('.floating-order-controls').toggleClass('active');
 	});
@@ -44,6 +49,13 @@ var load_modul = function(userpos){
 	} else if(userpos === 'calc') {
 		$("#calc-section").show();
 		$("#loading-section").hide();
+	}
+}
+
+var load_calc = function(calcData){
+	$(".calculator-grid").hide();
+	if(calcData === "profit"){
+		$("#calculator-component").load("./component/calc-profit.html");
 	}
 }
 
