@@ -58,6 +58,8 @@ var load_calc = function(calcData){
 	$(".calculator-grid").hide();
 	if(calcData === "profit"){
 		$("#calculator-component").load("./component/calc-profit.html");
+	} else if(calcData === "risk-reward"){
+		$("#calculator-component").load("./component/calc-risk-reward.html");
 	}
 }
 
@@ -95,5 +97,6 @@ var calc_count = function(calcpos){
 	if(calcpos === "profit") {
 		result = ($("#sell-price").val() - $("#buy-price").val()) / $("#buy-price").val() * 100;
 		$("#calc-result").val(result);
+	} else {
 	}
 }
