@@ -107,6 +107,25 @@ var calc_count = function(calcpos){
 	if(calcpos === "profit") {
 		result = ($("#sell-price").val() - $("#buy-price").val()) / $("#buy-price").val() * 100;
 		$("#calc-result").val(result);
-	} else {
+	} else if(calcpos == "risk-reward"){
+		if(isRatio($("#rasio-riskreward").val())){
+			alert(true);
+		}
 	}
+}
+
+function isRatio(input) {
+    // Regular expression to match ratio format (digits:digits)
+    const ratioRegex = /^\s*\d+\s*:\s*\d+\s*$/;
+    // Check if input matches the ratio pattern
+    if (!ratioRegex.test(input)) {
+        return false;
+    }
+    // Split the ratio into parts
+    const parts = input.split(':').map(part => parseInt(part.trim()));
+    // Check that neither part is zero
+    if (parts[0] === 0 || parts[1] === 0) {
+        return false;
+    }
+    return true;
 }
