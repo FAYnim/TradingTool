@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css"/>
+	<script src="https://kit.fontawesome.com/6ae1bb73d0.js" crossorigin="anonymous"></script>
     <title>TradingTool | Dashboard</title>
 </head>
 <body>
@@ -44,7 +45,13 @@
 		</div>
    
     	<div id="calc-section">
-			<h2 class="calculator-title">Trading Calculators</h2>
+			<h2 class="calculator-title" id="calculator-title-default">
+				Trading Calculators
+			</h2>
+			<h2 class="calculator-title" id="calculator-title-back" style="display: none;" onclick="load_all_calc()">
+				<i class="fa-sharp fa-solid fa-arrow-left" style="color: #fff;"></i>
+				Trading Calculators
+			</h2>
 			<div class="calculator-grid">
 				<div class="calculator-column">
 					<div class="calculator-box" data-calc="profit">

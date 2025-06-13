@@ -56,11 +56,21 @@ var load_modul = function(userpos){
 
 var load_calc = function(calcData){
 	$(".calculator-grid").hide();
+	$("#calculator-component").show();
+	$("#calculator-title-default").hide();
+	$("#calculator-title-back").show();
 	if(calcData === "profit"){
 		$("#calculator-component").load("./component/calc-profit.html");
 	} else if(calcData === "risk-reward"){
 		$("#calculator-component").load("./component/calc-risk-reward.html");
 	}
+}
+
+var load_all_calc = function(){
+	$("#calculator-component").hide();
+	$(".calculator-grid").show();
+	$("#calculator-title-back").hide();
+	$("#calculator-title-default").show();
 }
 
 var getTicker = function(){
