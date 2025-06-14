@@ -1,12 +1,12 @@
-<div class="calc-submenu" id="calc-profit">
+<form class="calc-submenu" id="calc-risk-reward">
 	<div class="calc-input">
 		<div class="calc-row">
 			<label for="rasio-riskreward">Rasio Risk/Reward</label>
-			<input type="text" id="rasio-riskreward" placeholder="1:2">
+			<input type="text" id="rasio-riskreward" placeholder="1:2" required>
 		</div>
 		<div class="calc-row">
 			<label for="entry-price">Entry</label>
-			<input type="number" id="entry-price" placeholder="1000">
+			<input type="number" id="entry-price" placeholder="1000" required>
 		</div>
 
 		<div class="calc-row">
@@ -18,5 +18,5 @@
 			<input type="number" id="stop-loss" placeholder="2000">
 		</div>
 	</div>
-	<button onclick="calc_count('risk-reward')">Hitung</button>
-</div>
+	<button type="submit" onclick="calc_count('risk-reward')">Hitung</button>
+</form>

@@ -100,7 +100,7 @@ var renderOrders = function(orders){
 			`).join('')}
 	`;
 	$("#orders-data").html(tableHtml);
-}
+} 
 
 var calc_count = function(calcpos){
 	let result;
@@ -109,7 +109,24 @@ var calc_count = function(calcpos){
 		$("#calc-result").val(result);
 	} else if(calcpos == "risk-reward"){
 		if(isRatio($("#rasio-riskreward").val())){
-			alert(true);
+			let rasio = $("#rasio-riskreward").val();
+			console.log(rasio);
+			const [rasio_risk, rasio_reward] = rasio.split(":");
+			let entry = $("#entry-price").val();
+			let tp = $("#take-profit").val();
+			let sl = $("#stop-loss").val();
+			let selisih;
+
+
+			if(entry && tp){
+				selisih = tp - entry;
+				sl = selisih / rasio_reward;
+				$("#stop-loss").val(sl);
+			} else if(entry && sl){
+				selisih = entry - sl;
+				tp = selisih * rasio_reward;
+				$("#take-profit").val(tp);
+			}
 		}
 	}
 }
