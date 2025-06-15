@@ -1,62 +1,65 @@
-[
-  {
-    "id": "ORD-2023-11-15-001",
-    "symbol": "BTCUSDT",
-    "type": "limit",
-    "side": "buy",
-    "price": 37250.00,
-    "amount": 0.02,
-    "filled": 0.02,
-    "timestamp": "2023-11-15T09:30:22Z",
-    "status": "filled",
-    "fee": 0.0002
-  },
-  {
-    "id": "ORD-2023-11-15-002",
-    "symbol": "ETHUSDT",
-    "type": "market",
-    "side": "sell",
-    "price": 2043.50,
-    "amount": 0.5,
-    "filled": 0.5,
-    "timestamp": "2023-11-15T10:15:43Z",
-    "status": "filled",
-    "fee": 0.0015
-  },
-  {
-    "id": "ORD-2023-11-15-003",
-    "symbol": "SOLUSDT",
-    "type": "limit",
-    "side": "buy",
-    "price": 58.75,
-    "amount": 5,
-    "filled": 0,
-    "timestamp": "2023-11-15T11:22:10Z",
-    "status": "active",
-    "fee": 0
-  },
-  {
-    "id": "ORD-2023-11-15-004",
-    "symbol": "XRPUSDT",
-    "type": "stop_limit",
-    "side": "sell",
-    "price": 0.625,
-    "amount": 1000,
-    "filled": 0,
-    "timestamp": "2023-11-15T13:45:31Z",
-    "status": "active",
-    "fee": 0
-  },
-  {
-    "id": "ORD-2023-11-15-005",
-    "symbol": "ADAUSDT",
-    "type": "limit",
-    "side": "buy",
-    "price": 0.38,
-    "amount": 500,
-    "filled": 250,
-    "timestamp": "2023-11-15T14:18:05Z",
-    "status": "partially_filled",
-    "fee": 0.0475
-  }
-]
+{
+  "order_example": [
+    {
+      "id": "ORD-2023-11-15-001",
+      "symbol": "BTCUSDT",
+      "type": "limit",
+      "side": "buy",
+      "price": 37250.00,
+      "amount": 0.02,
+      "filled": 0.02,
+      "timestamp": "2023-11-15T09:30:22Z",
+      "status": "filled",
+      "fee": 0.0002
+    },
+    {
+      "id": "ORD-2023-11-15-002",
+      "symbol": "ETHUSDT",
+      "type": "market",
+      "side": "sell",
+      "price": 2043.50,
+      "amount": 0.5,
+      "filled": 0.5,
+      "timestamp": "2023-11-15T10:15:43Z",
+      "status": "filled",
+      "fee": 0.0015
+    },
+    {
+      "id": "ORD-2023-11-15-003",
+      "symbol": "SOLUSDT",
+      "type": "limit",
+      "side": "buy",
+      "price": 58.75,
+      "amount": 5,
+      "filled": 0,
+      "timestamp": "2023-11-15T11:22:10Z",
+      "status": "active",
+      "fee": 0
+    },
+    {
+      "id": "ORD-2023-11-15-004",
+      "symbol": "XRPUSDT",
+      "type": "stop_limit",
+      "side": "sell",
+      "price": 0.625,
+      "amount": 1000,
+      "filled": 0,
+      "timestamp": "2023-11-15T13:45:31Z",
+      "status": "active",
+      "fee": 0
+    },
+    {
+      "id": "ORD-2023-11-15-005",
+      "symbol": "ADAUSDT",
+      "type": "limit",
+      "side": "buy",
+      "price": 0.38,
+      "amount": 500,
+      "filled": 250,
+      "timestamp": "2023-11-15T14:18:05Z",
+      "status": "partially_filled",
+      "fee": 0.0475
+    }
+  ],
+  "order_update": []
+}

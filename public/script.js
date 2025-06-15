@@ -83,24 +83,29 @@ var getTicker = function(){
 		$('.ticker-price').text('Error').css('color', 'var(--muted-red');
 	});
 }
+
 var renderOrders = function(orders){
-	const tableHtml = `
-			${orders.map(order => `
-				<tr class='order-row ${order.status}'>
-					<td>${order.id}</td>
-	                <td>${order.symbol}</td>
-	                <td>${order.type}</td>
-	                <td class="${order.side}">${order.side}</td>
-	                <td>${order.price.toLocaleString()}</td>
-	                <td>${order.amount}</td>
-	                <td>${order.filled}</td>
-	                <td><span class="status-badge ${order.status}">${order.status.replace('_', ' ')}</span></td>
-	                <td>${new Date(order.timestamp).toLocaleString()}</td>
-				</tr>
-			`).join('')}
-	`;
-	$("#orders-data").html(tableHtml);
-} 
+    const ordersToRender = orders.order_update && orders.order_update.length > 0 
+        ? orders.order_update
+        : orders.order_example;
+
+    const tableHtml = `
+        ${ordersToRender.map(order => `
+            <tr class='order-row ${order.status}'>
+                <td>${order.id}</td>
+                <td>${order.symbol}</td>
+                <td>${order.type}</td>
+                <td class="${order.side}">${order.side}</td>
+                <td>${order.price.toLocaleString()}</td>
+                <td>${order.amount}</td>
+                <td>${order.filled}</td>
+                <td><span class="status-badge ${order.status}">${order.status.replace('_', ' ')}</span></td>
+                <td>${new Date(order.timestamp).toLocaleString()}</td>
+            </tr>
+        `).join('')}
+    `;
+    $("#orders-data").html(tableHtml);
+}
 
 var calc_count = function(calcpos){
 	let result;
