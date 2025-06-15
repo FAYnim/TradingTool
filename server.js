@@ -15,8 +15,10 @@ app.get('/', (req, res) => {
 
 app.get('/api/orders', (req, res) => {
 	try {
-		const order = fs.readFileSync(path.join(__dirname, 'data', 'orders.json'));
-		res.json(JSON.parse(order));
+		const order_filePath = path.join(__dirname, '/data/orders.json');
+		const order_get = fs.readFileSync(order_filePath, 'utf-8');
+		const order = JSON.parse(order_get);
+		res.json(order);
 	} catch {
 		res.status(500).json({ error: 'Failed to load order' });
 	}
