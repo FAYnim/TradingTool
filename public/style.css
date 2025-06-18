@@ -54,6 +54,13 @@ header {
     margin: 0 auto;
 }
 
+header .left-side{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+	widht: 400px;
+}
 header .logo {
     font-size: 1.5rem;
     font-weight: 700;
@@ -61,6 +68,12 @@ header .logo {
 /*    padding: 12px 20px;*/
     letter-spacing: 0.5px;
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+header .hamburger-menu{
+	color: #fff;
+	font-size: 1.5rem;
+	font-weight: 700;
 }
 
 .ticker-display {

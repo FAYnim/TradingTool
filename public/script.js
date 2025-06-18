@@ -121,15 +121,17 @@ var calc_count = function(calcpos){
 			let tp = $("#take-profit").val();
 			let sl = $("#stop-loss").val();
 			let selisih;
-
+			let jarak;
 
 			if(entry && tp){
 				selisih = tp - entry;
-				sl = selisih / rasio_reward;
+				jarak = selisih * rasio_reward;
+				sl = parseInt(entry) - parseInt(jarak);
 				$("#stop-loss").val(sl);
 			} else if(entry && sl){
 				selisih = entry - sl;
-				tp = selisih * rasio_reward;
+				jarak = selisih * rasio_reward;
+				tp = parseInt(entry) + parseInt(jarak);
 				$("#take-profit").val(tp);
 			}
 		}

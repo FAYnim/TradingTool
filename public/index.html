@@ -11,17 +11,20 @@
 <body>
 	<header>
 	    <div class="header-content">
-	        <div class="logo">TradingTool</div>
+	        <div class="left-side">
+		    	<div class="hamburger-menu">=</div>
+	        	<div class="logo">TradingTool</div>
+	        </div>
 	        <div class="ticker-display">
 	            <span class="ticker-label">BTC/IDR:</span>
 	            <span class="ticker-price">Loading...</span>
 	        </div>
 	    </div>
 	</header>
-
+	
     <main>
-    	<div class="error" id="loading-section">Loading...</div>
-    	<div class="error" id="error-section">Something Error!</div>
+    	<div class="error" id="loading-section" style="display: none;">Loading...</div>
+    	<div class="error" id="error-section"  style="display: none;">Something Error!</div>
 
 		<div id="order-section">
 			<div class="orders-container">
@@ -83,7 +86,7 @@
 	<footer>
 		<div class="floating-order-controls">
 		  <div class="new-order-trigger">
-		    <span>+ New Order</span>
+		    <span>New Order</span>
 		  </div>
 		  
 		  <div class="order-form-container">
