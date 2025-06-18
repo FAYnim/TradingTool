@@ -6,7 +6,6 @@ class IndodaxAPI {
 
 $(document).ready(function(){
 	let userpos = 'order';
-	let calcpos = "";
 
 	load_modul(userpos);
 
@@ -21,7 +20,6 @@ $(document).ready(function(){
 
 	$(".calculator-box").on("click", function() {
 		let calcData = $(this).data("calc");
-		calcpos = calcData;
 		load_calc(calcData);
 	});
 
@@ -138,16 +136,12 @@ var calc_count = function(calcpos){
 	}
 }
 
-function isRatio(input) {
-    // Regular expression to match ratio format (digits:digits)
+var isRatio = function(input) {
     const ratioRegex = /^\s*\d+\s*:\s*\d+\s*$/;
-    // Check if input matches the ratio pattern
     if (!ratioRegex.test(input)) {
         return false;
     }
-    // Split the ratio into parts
     const parts = input.split(':').map(part => parseInt(part.trim()));
-    // Check that neither part is zero
     if (parts[0] === 0 || parts[1] === 0) {
         return false;
     }
